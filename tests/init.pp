@@ -8,4 +8,7 @@
 #
 # Learn more about module testing here: http://docs.puppetlabs.com/guides/tests_smoke.html
 #
-include zf
+class {'zf':
+	ensure  => present,
+	version => '1.12.3',
+}
