@@ -6,7 +6,7 @@ class zf::params
 	$peardir = "/usr/share/php"
 	$zenddir = "/usr/share/ZendFramework"
 	$pkgname = "ZendFramework-${version}.tar.gz"
-	$zendurl = "http://packages.zendframework.com/releases/ZendFramework-${version}/${pack}"
+	$zendurl = "https://packages.zendframework.com/releases/ZendFramework-${version}/${pkgname}"
 	$toolbin = "/usr/bin/zf"
-	$tool    = false
+	$zftool  = false
 }
