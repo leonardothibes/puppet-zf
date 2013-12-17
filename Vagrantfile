@@ -77,7 +77,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # # }
   #
   config.vm.synced_folder ".", "/etc/puppet/modules/zf"
-  config.vm.provision "shell", inline: "apt-get update > /dev/null"
+  config.vm.provision "shell", inline: "
+	apt-get update                                    > /dev/null
+	puppet module install leonardothibes-wget --force > /dev/null
+  "
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "tests"
     puppet.manifest_file  = "init.pp"
