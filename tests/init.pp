@@ -9,7 +9,6 @@
 # Learn more about module testing here: http://docs.puppetlabs.com/guides/tests_smoke.html
 #
 class {'zf':
-	ensure  => absent,
-	#version => '1.11.11',
-	zftool  => true,
+	ensure => present,
+	zftool => true,
 }
