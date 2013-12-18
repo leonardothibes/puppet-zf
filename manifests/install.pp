@@ -74,8 +74,6 @@ define zf::install($version = $title, $installdir, $zftool)
 	# Install Zend Tool
 	if $zftool {
 		zf::tool::install {'zftool':}
-	} else {
-		zf::tool::uninstall {'zftool':}
 	}
 	# Install Zend Tool
 }
