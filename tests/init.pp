@@ -10,5 +10,5 @@
 #
 class {'zf':
 	ensure  => present,
-	version => '1.12.3',
+	#version => '1.11.11',
 }
