@@ -70,4 +70,12 @@ define zf::install($version = $title, $installdir, $zftool)
 		target => "${zf::params::zenddir}/current/extras/library/ZendX",
 	}
 	# Integrating the framework to the include path of the PHP
+
+	# Install Zend Tool
+	if $zftool {
+		zf::tool::install {'zftool':}
+	} else {
+		zf::tool::uninstall {'zftool':}
+	}
+	# Install Zend Tool
 }
