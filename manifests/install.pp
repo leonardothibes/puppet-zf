@@ -9,9 +9,22 @@ define zf::install($version = $title, $installdir, $zftool)
 		mode   => 0755,
 	}
 
-	$pkgname = "ZendFramework-${version}.tar.gz"
+	$pkgname     = "ZendFramework-${version}.tar.gz"
+	$destination = "${zf::params::srcdir}/${pkgname}"
+
 	wget::fetch {'wget-zf':
 		source      => $zf::params::zendurl,
-		destination => "$zf::params::srcdir/$pkgname",
+		destination => $destination,
+		before      => Exec['tar-zf'],
+	}
+
+	exec {'tar-zf':
+		command => "tar -xzvf ${destination}",
+		path    => ['/bin','/usr/bin'],
+		cwd     => $zf::params::srcdir,
+		onlyif  => [
+			"test -f ${destination}",
+			"test ! -d ${zf::params::srcdir}/ZendFramework-${version}",
+		],
 	}
 }
