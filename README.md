@@ -4,7 +4,7 @@ puppet-zf
 A Puppet module that installs Zend Framework 1.x.x.
 
 ## Sample Usage
-Install zf and use the provided configuration defaults
+Install zf and use the provided configuration defaults:
 ```puppet
 node default {
 	class {'zf':}
@@ -17,7 +17,7 @@ node default {
 }
 ```
 
-Install diferent version
+Install diferent version:
 ```puppet
 node default {
 	class {'zf':
@@ -27,7 +27,7 @@ node default {
 }
 ```
 
-Install Zend Tool
+Install Zend Tool:
 ```puppet
 node default {
 	class {'zf':
@@ -37,7 +37,7 @@ node default {
 }
 ```
 
-Uninstall zf
+Uninstall zf:
 ```puppet
 node default {
 	class {'zf':
