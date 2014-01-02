@@ -21,7 +21,7 @@ Install diferent version:
 ```puppet
 node default {
 	class {'zf':
-		ensure  => install,
+		ensure  => present,
 		version => '1.11.11',
 	}
 }
@@ -31,7 +31,7 @@ Install Zend Tool:
 ```puppet
 node default {
 	class {'zf':
-		ensure => install,
+		ensure => present,
 		ztool  => true,
 	}
 }
