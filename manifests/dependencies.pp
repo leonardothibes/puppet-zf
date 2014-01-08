@@ -4,5 +4,10 @@ class zf::dependencies
 		fail("Unsupported platform: ${osfamily}/${operatingsystem}")
 	}
 	require wget
-	package {['php5', 'php-pear']: ensure  => present}
+    if !defined(Packages['php5']) {
+        package {'php5': ensure  => present}
+    }   
+    if !defined(Packages['php-pear']) {
+        package {'php-pear': ensure  => present}
+    }
 }
