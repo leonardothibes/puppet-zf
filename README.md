@@ -7,13 +7,13 @@ A Puppet module that installs Zend Framework 1.x.x and 2.x.x.
 Install zf and use the provided configuration defaults:
 ```puppet
 node default {
-	class {'zf':}
+	class {'zf':} //Default version is 1.12.3
 }
 ```
 or
 ```puppet
 node default {
-	include zf
+	include zf //Default version is 1.12.3
 }
 ```
 
