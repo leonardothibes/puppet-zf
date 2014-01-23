@@ -18,11 +18,7 @@ class zf(
 				zftool     => $zftool,
 			}
 		}
-		'absent': {
-			zf::uninstall {'uninstall':}
-		}
-		default: {
-			fail("Unsupported option for \"ensure\" param: ${ensure}")
-		}
+		'absent': { zf::uninstall {'uninstall':} }
+		default : { fail("Unsupported option for \"ensure\" param: ${ensure}") }
 	}
 }
