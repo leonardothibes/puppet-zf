@@ -10,6 +10,6 @@
 #
 class {'zf':
 	ensure  => present,
-	version => '2.2.5',
+	version => latest,
 	zftool  => true,
 }
