@@ -27,7 +27,7 @@ define zf::install($version = $title, $installdir, $zftool)
 
 	# Unpacking the source
 	exec {'tar-zf':
-		command => "tar -xzvf ${destination}",
+		command => "tar -xzf ${destination}",
 		path    => ['/bin','/usr/bin'],
 		cwd     => $zf::params::srcdir,
 		onlyif  => [
