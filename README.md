@@ -1,7 +1,7 @@
 puppet-zf
 =========
 
-A Puppet module that installs Zend Framework 1.x.x.
+A Puppet module that installs Zend Framework 1.x.x and 2.x.x.
 
 ## Sample Usage
 Install zf and use the provided configuration defaults:
@@ -23,6 +23,15 @@ node default {
 	class {'zf':
 		ensure  => present,
 		version => '1.11.11',
+	}
+}
+```
+or
+```puppet
+node default {
+	class {'zf':
+		ensure  => present,
+		version => '2.2.5',
 	}
 }
 ```
