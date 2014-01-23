@@ -3,7 +3,10 @@ define zf::install($version = $title, $installdir, $zftool)
 	# Params
 	include zf::params
 
-	$pkgname     = "ZendFramework-${version}.tar.gz"
+	$splited     = split($version,'[.]')
+	$major       = $splited[0]
+	$ext         = $major ? {1 => 'tar.gz', 2 => 'tgz'}
+	$pkgname     = "ZendFramework-${version}.${ext}"
 	$zendurl     = "https://packages.zendframework.com/releases/ZendFramework-${version}/${pkgname}"
 	$destination = "${zf::params::srcdir}/${pkgname}"
 	# Params
@@ -65,9 +68,13 @@ define zf::install($version = $title, $installdir, $zftool)
 		ensure => link,
 		target => "${zf::params::zenddir}/current/library/Zend",
 	}
-	file {"${zf::params::peardir}/ZendX":
-		ensure => link,
-		target => "${zf::params::zenddir}/current/extras/library/ZendX",
+	if $major == 1 {
+		file {"${zf::params::peardir}/ZendX":
+			ensure => link,
+			target => "${zf::params::zenddir}/current/extras/library/ZendX",
+		}
+	} else {
+		file {"${zf::params::peardir}/ZendX": ensure => absent}
 	}
 	# Integrating the framework to the include path of the PHP
 
