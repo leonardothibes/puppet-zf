@@ -1,6 +1,6 @@
 name    'leonardothibes-zf'
 author  'leonardothibes'
-version '1.0.3'
+version '1.0.4'
 license 'MIT'
 summary 'A Puppet module that installs Zend Framework 1.x.x and 2.x.x'
 description 'A Puppet module that installs Zend Framework 1.x.x and 2.x.x'
