@@ -82,7 +82,7 @@ define zf::install($version = $title, $installdir, $zftool)
 	if $zftool {
 		zf::tool::install {$major:}
 	} else {
-		zf::tool::uninstall {$major:}
+		zf::tool::uninstall {'zftool-uninstall':}
 	}
 	# Install Zend Tool
 }
