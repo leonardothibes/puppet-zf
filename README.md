@@ -35,6 +35,15 @@ node default {
 	}
 }
 ```
+or yet
+```puppet
+node default {
+	class {'zf':
+		ensure  => present,
+		version => latest,  //To get a last version
+	}
+}
+```
 
 Install Zend Tool:
 ```puppet
