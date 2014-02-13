@@ -22,6 +22,6 @@ class zf::tool
 
 	define uninstall()
 	{
-		file {"$zf::params::toolbin": ensure => absent}
+		file {$zf::params::toolbin: ensure => absent}
 	}
 }
