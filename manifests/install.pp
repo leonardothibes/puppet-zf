@@ -2,6 +2,9 @@ define zf::install($version = $title, $installdir, $zftool)
 {
 	# Params
 	include zf::params
+	Exec {
+		path => ['/bin','/usr/bin'],
+	}
 
 	$splited     = split($version,'[.]')
 	$major       = $splited[0]
@@ -31,7 +34,6 @@ define zf::install($version = $title, $installdir, $zftool)
 	# Unpacking the source
 	exec {'tar-zf':
 		command => "tar -xzf ${destination}",
-		path    => ['/bin','/usr/bin'],
 		cwd     => $zf::params::srcdir,
 		onlyif  => [
 			"test -f ${destination}",
@@ -50,12 +52,15 @@ define zf::install($version = $title, $installdir, $zftool)
 	}
 	exec {'copy-zf':
 		command => "cp -Rf ${zf::params::srcdir}/ZendFramework-${version} ${zf::params::zenddir}/${version}",
-		path    => ['/bin','/usr/bin'],
 		onlyif  => [
 			"test -d ${zf::params::srcdir}/ZendFramework-${version}",
 			"test ! -d ${zf::params::zenddir}/${version}",
 		],
 		require => File[$zf::params::zenddir],
+	}
+	exec {'chmod-zf':
+		command => "chmod -R 755 ${zf::params::zenddir}/${version}",
+		require => Exec['copy-zf'],
 	}
 	file {"${zf::params::zenddir}/current":
 		ensure => link,
