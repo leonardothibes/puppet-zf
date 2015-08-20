@@ -1,0 +1,13 @@
+{
+  "name": "leonardothibes-zf",
+  "version": "0.1.0",
+  "author": "leonardothibes",
+  "summary": "ssfgsdfg",
+  "license": "Apache-2.0",
+  "source": "https://github.com/leonardothibes/puppet-zf",
+  "project_page": "https://github.com/leonardothibes/puppet-zf",
+  "issues_url": "https://github.com/leonardothibes/puppet-zf/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
