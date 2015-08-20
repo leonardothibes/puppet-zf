@@ -1,13 +1,14 @@
 {
   "name": "leonardothibes-zf",
-  "version": "0.1.0",
+  "version": "1.0.6",
   "author": "leonardothibes",
-  "summary": "ssfgsdfg",
-  "license": "Apache-2.0",
+  "summary": "A Puppet module that installs Zend Framework 1.x.x and 2.x.x",
+  "license": "MIT",
   "source": "https://github.com/leonardothibes/puppet-zf",
   "project_page": "https://github.com/leonardothibes/puppet-zf",
   "issues_url": "https://github.com/leonardothibes/puppet-zf/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"leonardothibes-wget","version_requirement":">= 1.0.0"}
   ]
 }
