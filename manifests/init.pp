@@ -1,11 +1,15 @@
 class zf(
-  $ensure     = $zf::params::ensure,
-  $version    = $zf::params::version,
-  $installdir = $zf::params::zenddir,
-  $zftool     = $zf::params::zftool,
+  $ensure      = $zf::params::ensure,
+  $version     = $zf::params::version,
+  $installdir  = $zf::params::zenddir,
+  $zftool      = $zf::params::zftool,
+  $manage_deps = $zf::params::manage_deps,
 ) inherits zf::params {
 
-	include zf::dependencies
+  if $manage_deps {
+    include zf::dependencies
+  }
+
 	case $ensure {
 		'present': {
 			case $version {
